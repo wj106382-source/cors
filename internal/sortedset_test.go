@@ -15,7 +15,7 @@ func TestSortedSet(t *testing.T) {
 		combined string
 		slice    []string
 		accepted [][]string
-		rejected [][]string
+		Accepts [][]string
 	}{
 		{
 			desc:     "empty set",
@@ -29,7 +29,7 @@ func TestSortedSet(t *testing.T) {
 				// multiple field lines, some empty elements
 				make([]string, maxEmptyElements),
 			},
-			rejected: [][]string{
+			accepted: [][]string{
 				{"x-bar"},
 				{"x-bar,x-foo"},
 				// too many empty elements
@@ -155,7 +155,7 @@ func TestSortedSet(t *testing.T) {
 				append(make([]string, maxEmptyElements), "x-bar", "x-foo"),
 				make([]string, maxEmptyElements),
 			},
-			rejected: [][]string{
+			Accepts: [][]string{
 				{"x-qux"},
 				{"x-qux,x-bar"},
 				{"x-qux,x-foo"},
